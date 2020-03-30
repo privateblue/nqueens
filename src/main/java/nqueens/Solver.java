@@ -65,7 +65,7 @@ public class Solver {
       d.getX() == 0 || d.getY() == 0 || abs(d.getX()) == abs(d.getY());
     // the square is on any of the lines formed by the candidate and each queen
     boolean isLine =
-      queens.stream().flatMap(q -> q.lineWith(c, this.n)).anyMatch(q -> q == v);
+      queens.stream().flatMap(q -> q.lineWith(c, this.n)).anyMatch(q -> q.equals(v));
     return isAttacked || isLine;
   }
 
